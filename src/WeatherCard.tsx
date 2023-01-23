@@ -1,3 +1,5 @@
+import './weather.css';
+
 export const WeatherCard = ({
   city,
   temperature = 0,
@@ -8,10 +10,12 @@ export const WeatherCard = ({
   weather?: string;
 }) => {
   return (
-    <div>
+    <div className="weather-container">
       <h3>{city}</h3>
-      <span>{temperature ? temperature.toFixed(1) : "N/A"}</span>
-      <span>{weather}</span>
+      <div className="details">
+        <span className="temperature">{temperature ? temperature.toFixed(1) : "N/A"}</span>
+        <span className="weather">{weather}</span>
+      </div>
     </div>
   );
 };

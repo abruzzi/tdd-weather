@@ -1,0 +1,16 @@
+.weather-container {
+  border: 1px solid #efefef;
+  border-radius: 6px;
+  box-shadow: 0 0 4px -2px #efefef;
+  padding: 1rem;
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.temperature {
+  font-size: 5rem;
+}
