@@ -14,7 +14,7 @@ export const WeatherCard = ({
       <h3>{city}</h3>
       <div className="details">
         <span className="temperature">
-          {temperature ? temperature.toFixed(1) : "N/A"}&#176;C
+          {temperature ? temperature.toFixed(1) + "°C" : "N/A"}
         </span>
         <div className="weather">
           <span className="material-symbols-outlined">cloudy</span>
