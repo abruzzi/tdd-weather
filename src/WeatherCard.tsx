@@ -13,7 +13,7 @@ export const WeatherCard = ({
     <div className="weather-container">
       <h3>{city}</h3>
       <div className="details">
-        <span className="temperature">{temperature ? temperature.toFixed(1) : "N/A"}</span>
+        <span className="temperature">{temperature ? temperature.toFixed(1) : "N/A"}&#176;</span>
         <span className="weather">{weather}</span>
       </div>
     </div>
