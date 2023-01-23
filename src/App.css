@@ -7,3 +7,8 @@
 .app h1 {
   margin-block: 1rem;
 }
+
+body {
+  background-color: #efefef;
+  color: #333;
+}
