@@ -16,6 +16,7 @@ body {
 .card-container {
   display: flex;
   gap: 1rem;
+  margin-block: 1rem;
 }
 
 .search-container {
@@ -42,4 +43,22 @@ body {
   border: 1px solid lightseagreen;
   color: white;
   border-radius: 4px;
+}
+
+.candidates {
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+ul.candidates li {
+  list-style: none;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+ul.candidates li:hover {
+  background-color: #eee;
 }

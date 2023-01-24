@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import "./App.css";
 import { createMockServer } from "./createMockServer";
+import {WeatherCard} from "./WeatherCard";
 
 createMockServer();
 
@@ -30,29 +31,33 @@ function App() {
     <div className="app">
       <h1>Weather application</h1>
 
-      <div className="search-container">
-        <input
-          type="text"
-          data-testid="city-input"
-          onChange={handleChange}
-          placeholder="Enter city name (e.g. Melbourne, London, Tokyo)"
-        />
-        <button data-testid="search" onClick={performSearch}>
-          Search
-        </button>
+      <div>
+        <div className="search-container">
+          <input
+            type="text"
+            data-testid="city-input"
+            onChange={handleChange}
+            placeholder="Enter city name (e.g. Melbourne, London, Tokyo)"
+          />
+          <button data-testid="search" onClick={performSearch}>
+            Search
+          </button>
+        </div>
+
+        {cities.length > 0 && (
+          <ul className="candidates">
+            {cities.map((city) => (
+              <li key={city} onClick={() => selectCity(city)}>
+                {city}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      <ul>
-        {cities.map((city) => (
-          <li key={city} onClick={() => selectCity(city)}>
-            {city}
-          </li>
-        ))}
-      </ul>
-
-      <div data-testid="cities">
+      <div data-testid="cities" className="card-container">
         {selected.map((city) => (
-          <div>{city}</div>
+          <WeatherCard city={city} weather="rain" />
         ))}
       </div>
     </div>
