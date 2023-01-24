@@ -1,15 +1,74 @@
 .weather-container {
+  flex: 1;
+  max-width: 160px;
+  padding: 1rem;
+  font-weight: lighter;
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 6px;
   box-shadow: 0 0 4px -3px rgba(0,0,0,0.3);
-  padding: 1rem;
-  max-width: 200px;
+  color: white;
+}
+
+.sunny {
+  background:
+    linear-gradient(to bottom,
+    rgba(128, 128, 128, 0.2)  0%,
+    rgba(64, 64, 64, 0.5)  75%,
+    rgba(0, 0, 0, 1) 100%
+    ),
+    url('./assets/sunny.jpg');
+  background-size: cover;
+}
+
+.cloud {
+  background:
+    linear-gradient(to bottom,
+    rgba(128, 128, 128, 0.2)  0%,
+    rgba(64, 64, 64, 0.5)  75%,
+    rgba(0, 0, 0, 1) 100%
+    ),
+    url('./assets/cloud.light.jpg');
+  background-size: cover;
+}
+
+.rain {
+  background:
+    linear-gradient(to bottom,
+    rgba(128, 128, 128, 0.2)  0%,
+    rgba(64, 64, 64, 0.5)  75%,
+    rgba(0, 0, 0, 1) 100%
+    ),
+    url('./assets/rain.dark.jpg');
+  background-size: cover;
+}
+
+.storm {
+  background:
+    linear-gradient(to bottom,
+    rgba(128, 128, 128, 0.2)  0%,
+    rgba(64, 64, 64, 0.5)  75%,
+    rgba(0, 0, 0, 1) 100%
+    ),
+    url('./assets/storm.jpg');
+  background-size: cover;
+}
+
+.snow {
+  background:
+    linear-gradient(to bottom,
+    rgba(128, 128, 128, 0.2)  0%,
+    rgba(64, 64, 64, 0.5)  75%,
+    rgba(0, 0, 0, 1) 100%
+    ),
+    url('./assets/snow.jpg');
+  background-size: cover;
 }
 
 .weather-container h3 {
   margin-bottom: 1rem;
   text-align: center;
+  font-weight: lighter;
 }
 
 .details {
@@ -20,7 +79,7 @@
 }
 
 .temperature {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 

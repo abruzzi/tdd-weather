@@ -12,3 +12,8 @@ body {
   background-color: #efefef;
   color: #333;
 }
+
+.card-container {
+  display: flex;
+  gap: 1rem;
+}

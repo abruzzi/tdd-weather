@@ -14,7 +14,7 @@ describe("weather card", () => {
 
   it("renders temperature", () => {
     render(<WeatherCard city="Melbourne" temperature={25.0} />);
-    expect(screen.getByText("25.0°C")).toBeInTheDocument();
+    expect(screen.getByText("25.0°")).toBeInTheDocument();
   });
 
   it("renders weather", () => {

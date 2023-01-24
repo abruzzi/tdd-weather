@@ -10,11 +10,11 @@ export const WeatherCard = ({
   weather?: string;
 }) => {
   return (
-    <div className="weather-container">
+    <div className={`weather-container ${weather}`}>
       <h3>{city}</h3>
       <div className="details">
         <span className="temperature">
-          {temperature ? temperature.toFixed(1) + "°C" : "N/A"}
+          {temperature ? temperature.toFixed(1) + "°" : "N/A"}
         </span>
         <div className="weather">
           <span className="material-symbols-outlined">cloudy</span>
