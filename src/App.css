@@ -17,3 +17,29 @@ body {
   display: flex;
   gap: 1rem;
 }
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.search-container input::placeholder {
+  color: #999;
+}
+
+.search-container button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: lightseagreen;
+  border: 1px solid lightseagreen;
+  color: white;
+  border-radius: 4px;
+}
