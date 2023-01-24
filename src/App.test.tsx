@@ -8,13 +8,9 @@ import {Server} from "miragejs/server";
 let server: Server;
 
 describe("weather application", () => {
-  beforeEach(() => {
-    server = createMockServer();
-  })
+  beforeEach(() => (server = createMockServer()));
 
-  afterEach(() => {
-    server.shutdown()
-  })
+  afterEach(() => server.shutdown());
 
   it("renders title", () => {
     render(<App />);
@@ -31,13 +27,13 @@ describe("weather application", () => {
     const button = screen.getByTestId('search');
     userEvent.click(button);
 
-    await waitFor(() => expect(screen.getAllByText(/Melbourne/i).length).toEqual(3));
+    await waitFor(() => expect(screen.getAllByText(/Melbourne/i).length).toEqual(5));
 
     const mel = screen.getAllByText(/Melbourne/i)[1];
     userEvent.click(mel);
 
     expect(
-      within(screen.getByTestId("cities")).getByText("Melbourne AU")
+      within(screen.getByTestId("cities")).getByText("Melbourne, AU")
     ).toBeInTheDocument();
   });
 });

@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import "./App.css";
 import { createMockServer } from "./createMockServer";
-import {WeatherCard} from "./WeatherCard";
 
 createMockServer();
 
@@ -16,9 +15,9 @@ function App() {
 
   const performSearch = () => {
     fetch(`https://weather.service/api/cities?query=${query}`)
-      .then((r) => r.json())
+      .then((response) => response.json())
       .then((json) => {
-        setCities(json);
+        setCities(json.map((x: any) => `${x.name}, ${x.sys.country}`));
       });
   };
 
@@ -57,7 +56,7 @@ function App() {
 
       <div data-testid="cities" className="card-container">
         {selected.map((city) => (
-          <WeatherCard city={city} weather="rain" />
+          <div>{city}</div>
         ))}
       </div>
     </div>

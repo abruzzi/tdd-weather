@@ -1,15 +1,10 @@
-import {createServer} from 'miragejs';
+import { createServer } from "miragejs";
+import data from "./melbourne.json";
 
-export const createMockServer = () => {
-  return createServer({
+export const createMockServer = () =>
+  createServer({
     routes() {
-      this.urlPrefix = 'https://weather.service'
-      this.namespace = "api"
-
-      this.get("/cities", () => {
-        return ["Melbourne US", "Melbourne AU", "Melbourne GB"]
-      })
+      this.urlPrefix = "https://weather.service/api";
+      this.get("/cities", () => data.list);
     },
-  })
-
-}
+  });

@@ -1,0 +1,204 @@
+{
+  "cod": "200",
+  "count": 5,
+  "list": [
+    {
+      "clouds": {
+        "all": 0
+      },
+      "coord": {
+        "lat": 28.0836,
+        "lon": -80.6081
+      },
+      "dt": 1674537202,
+      "id": 4163971,
+      "main": {
+        "feels_like": 15.07,
+        "humidity": 68,
+        "pressure": 1023,
+        "temp": 15.67,
+        "temp_max": 17.77,
+        "temp_min": 12.21
+      },
+      "name": "Melbourne",
+      "rain": null,
+      "snow": null,
+      "sys": {
+        "country": "US"
+      },
+      "weather": [
+        {
+          "description": "clear sky",
+          "icon": "01n",
+          "id": 800,
+          "main": "Clear"
+        }
+      ],
+      "wind": {
+        "deg": 49,
+        "speed": 4.02
+      }
+    },
+    {
+      "clouds": {
+        "all": 75
+      },
+      "coord": {
+        "lat": -37.814,
+        "lon": 144.9633
+      },
+      "dt": 1674536944,
+      "id": 2158177,
+      "main": {
+        "feels_like": 24.69,
+        "humidity": 51,
+        "pressure": 1010,
+        "temp": 24.82,
+        "temp_max": 27.34,
+        "temp_min": 23.7
+      },
+      "name": "Melbourne",
+      "rain": {
+        "1h": 0.18
+      },
+      "snow": null,
+      "sys": {
+        "country": "AU"
+      },
+      "weather": [
+        {
+          "description": "thunderstorm with light rain",
+          "icon": "11d",
+          "id": 200,
+          "main": "Thunderstorm"
+        },
+        {
+          "description": "light rain",
+          "icon": "10d",
+          "id": 500,
+          "main": "Rain"
+        }
+      ],
+      "wind": {
+        "deg": 250,
+        "speed": 6.69
+      }
+    },
+    {
+      "clouds": {
+        "all": 0
+      },
+      "coord": {
+        "lat": 52.8219,
+        "lon": -1.4252
+      },
+      "dt": 1674536956,
+      "id": 2642801,
+      "main": {
+        "feels_like": -5.45,
+        "humidity": 86,
+        "pressure": 1038,
+        "temp": -1.2,
+        "temp_max": -0.51,
+        "temp_min": -3.07
+      },
+      "name": "Melbourne",
+      "rain": null,
+      "snow": null,
+      "sys": {
+        "country": "GB"
+      },
+      "weather": [
+        {
+          "description": "clear sky",
+          "icon": "01n",
+          "id": 800,
+          "main": "Clear"
+        }
+      ],
+      "wind": {
+        "deg": 200,
+        "speed": 3.6
+      }
+    },
+    {
+      "clouds": {
+        "all": 34
+      },
+      "coord": {
+        "lat": 36.0595,
+        "lon": -91.9085
+      },
+      "dt": 1674537049,
+      "id": 4121256,
+      "main": {
+        "feels_like": 2.01,
+        "grnd_level": 1003,
+        "humidity": 82,
+        "pressure": 1026,
+        "sea_level": 1026,
+        "temp": 2.01,
+        "temp_max": 2.78,
+        "temp_min": 2
+      },
+      "name": "Melbourne",
+      "rain": null,
+      "snow": null,
+      "sys": {
+        "country": "US"
+      },
+      "weather": [
+        {
+          "description": "scattered clouds",
+          "icon": "03n",
+          "id": 802,
+          "main": "Clouds"
+        }
+      ],
+      "wind": {
+        "deg": 199,
+        "speed": 1.29
+      }
+    },
+    {
+      "clouds": {
+        "all": 66
+      },
+      "coord": {
+        "lat": 53.8876,
+        "lon": -0.8593
+      },
+      "dt": 1674536773,
+      "id": 2642800,
+      "main": {
+        "feels_like": -3.75,
+        "grnd_level": 1037,
+        "humidity": 82,
+        "pressure": 1038,
+        "sea_level": 1038,
+        "temp": -0.88,
+        "temp_max": 2.84,
+        "temp_min": -3.01
+      },
+      "name": "Melbourne",
+      "rain": null,
+      "snow": null,
+      "sys": {
+        "country": "GB"
+      },
+      "weather": [
+        {
+          "description": "broken clouds",
+          "icon": "04n",
+          "id": 803,
+          "main": "Clouds"
+        }
+      ],
+      "wind": {
+        "deg": 180,
+        "speed": 2.22
+      }
+    }
+  ],
+  "message": "accurate"
+}

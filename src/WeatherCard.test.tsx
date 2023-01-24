@@ -9,7 +9,7 @@ describe("weather card", () => {
 
   it("renders N/A when temperature is not available", () => {
     render(<WeatherCard city="Melbourne" />);
-    expect(screen.getByText("N/A")).toBeInTheDocument();
+    expect(screen.getByText("-/-")).toBeInTheDocument();
   });
 
   it("renders temperature", () => {
