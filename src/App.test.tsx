@@ -3,7 +3,16 @@ import {render, screen, waitFor} from '@testing-library/react';
 import App from './App';
 import userEvent from "@testing-library/user-event";
 
+import {Server} from 'miragejs';
+import {createMockServer} from "./createMockServer";
+
+
 describe('weather application', () => {
+  let server: Server;
+
+  beforeEach(() => (server = createMockServer()));
+  afterEach(() => server.shutdown());
+
   it('renders title', () => {
     render(<App />);
     const title = screen.getByText(/Weather Application/i);

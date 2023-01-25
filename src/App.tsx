@@ -1,19 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import "./App.css";
 
-import { createServer } from "miragejs";
-import data from './search-response.json';
-
-createServer({
-  routes() {
-    this.urlPrefix = "https://api.openweathermap.org/geo/1.0";
-
-    this.get("/direct", () => {
-      return data;
-    });
-  },
-});
-
 function App() {
   const [query, setQuery] = useState<string>("");
   const [cities, setCities] = useState<string[]>([]);
@@ -23,7 +10,9 @@ function App() {
   }
 
   function handleClick() {
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}`)
+    fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=91c8138e0d479b826ec6e9d617cf4c6c`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCities(data.map((d: any) => `${d.name}, ${d.country}`));
@@ -44,7 +33,7 @@ function App() {
       </button>
 
       {cities.map((city) => (
-        <div>{city}</div>
+        <div key={city}>{city}</div>
       ))}
     </div>
   );
