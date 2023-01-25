@@ -1,12 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import "./App.css";
-
-type City = {
-  name: string;
-  country: string;
-  lat: number;
-  lon: number;
-};
+import { City } from "./types";
+import { WeatherCard } from "./WeatherCard";
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -35,7 +30,7 @@ function App() {
   }
 
   function selectCity(city: City) {
-    setSelected([city, ...selected])
+    setSelected([city, ...selected]);
   }
 
   return (
@@ -63,9 +58,7 @@ function App() {
 
       <div data-testid="cities">
         {selected.map((city) => (
-          <div key={`${city.lat}${city.lon}`} className="city">
-            {city.name}
-          </div>
+          <WeatherCard city={city} />
         ))}
       </div>
     </div>
