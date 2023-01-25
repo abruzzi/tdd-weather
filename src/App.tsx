@@ -1,9 +1,16 @@
 import React, { ChangeEvent, useState } from "react";
 import "./App.css";
 
+type City = {
+  name: string;
+  country: string;
+  lat: number;
+  lon: number;
+}
+
 function App() {
   const [query, setQuery] = useState<string>("");
-  const [cities, setCities] = useState<string[]>([]);
+  const [cities, setCities] = useState<City[]>([]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
@@ -15,25 +22,29 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setCities(data.map((d: any) => `${d.name}, ${d.country}`));
+        setCities(data.map(({name, country, lat, lon}: any) => ({name, country, lat, lon})));
       });
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Weather Application</h1>
-      <input
-        type="text"
-        data-testid="search-input"
-        onChange={handleChange}
-        value={query}
-      />
-      <button data-testid="search-button" onClick={handleClick}>
-        Search
-      </button>
+
+      <div className="search-container">
+        <input
+          type="text"
+          data-testid="search-input"
+          onChange={handleChange}
+          value={query}
+          placeholder="Enter city name (e.g. London, Melbourne)"
+        />
+        <button data-testid="search-button" onClick={handleClick}>
+          Search
+        </button>
+      </div>
 
       {cities.map((city) => (
-        <div key={city}>{city}</div>
+        <div key={`${city.lat}${city.lon}`}>{city.name}, {city.country}</div>
       ))}
     </div>
   );
