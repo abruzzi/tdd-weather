@@ -35,4 +35,17 @@ describe("weather card", () => {
 
     await screen.findByText("20.72");
   });
+
+  it('renders weather', async () => {
+    const city: City = {
+      name: "Melbourne",
+      country: "AU",
+      lat: -37.8142176,
+      lon: 144.9631608,
+    };
+
+    render(<WeatherCard city={city} />);
+
+    await screen.findByText("Clear");
+  })
 });
