@@ -6,11 +6,12 @@ type City = {
   country: string;
   lat: number;
   lon: number;
-}
+};
 
 function App() {
   const [query, setQuery] = useState<string>("");
   const [cities, setCities] = useState<City[]>([]);
+  const [selected, setSelected] = useState<City[]>([]);
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
@@ -22,8 +23,19 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setCities(data.map(({name, country, lat, lon}: any) => ({name, country, lat, lon})));
+        setCities(
+          data.map(({ name, country, lat, lon }: any) => ({
+            name,
+            country,
+            lat,
+            lon,
+          }))
+        );
       });
+  }
+
+  function selectCity(city: City) {
+    setSelected([city, ...selected])
   }
 
   return (
@@ -44,8 +56,18 @@ function App() {
       </div>
 
       {cities.map((city) => (
-        <div key={`${city.lat}${city.lon}`}>{city.name}, {city.country}</div>
+        <div key={`${city.lat}${city.lon}`} onClick={() => selectCity(city)}>
+          {city.name}, {city.country}
+        </div>
       ))}
+
+      <div data-testid="cities">
+        {selected.map((city) => (
+          <div key={`${city.lat}${city.lon}`} className="city">
+            {city.name}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
