@@ -14,6 +14,8 @@ const createMockServer = () => {
       this.get('/data/2.5/weather', () => {
         return weather;
       })
+
+      this.passthrough();
     },
   });
 };

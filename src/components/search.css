@@ -14,8 +14,9 @@
 }
 
 .search-results {
+  background-color: white;
   margin: 0.5rem 0;
-  border: 1px solid #efefef;
+  border: 1px solid #ddd;
 }
 
 .search-result {

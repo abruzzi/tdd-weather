@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
-import { createMockServer } from "../mock/createMockServer";
 import { City } from "../types";
 import { Search } from "./Search";
 import { WeatherCard } from "./WeatherCard";
-
-// if (process.env.NODE_ENV === "development") {
-//   createMockServer();
-// }
 
 function WeatherApplication() {
   const [selected, setSelected] = useState<City[]>([]);
