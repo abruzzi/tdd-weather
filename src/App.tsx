@@ -1,24 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ChangeEvent, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [query, setQuery] = useState<string>("");
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
+  const handleClick = () => {
+    fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=91c8138e0d479b826ec6e9d617cf4c6c`
+    )
+      .then((r) => r.json())
+      .then((cities) => {
+        setSearchResults(
+          cities.map((city: any) => ({
+            name: city.name,
+          }))
+        );
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Weather Application</h1>
+
+      <div>
+        <input
+          type="text"
+          data-testid="search-input"
+          onChange={handleChange}
+          placeholder="Enter city name (e.g. Melbourne, New York)"
+        />
+        <button data-testid="search-button" onClick={handleClick}>
+          Search
+        </button>
+      </div>
+
+      {searchResults.length > 0 && (
+        <ul data-testid="search-results">
+          {searchResults.map((city, index) => (
+            <li key={index} className="search-result">
+              {city.name}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
