@@ -15,7 +15,7 @@ describe('weather application', () => {
     cy.visit('http://localhost:3000/');
 
     cy.get('[data-testid="search-input"]').type('Melbourne');
-    cy.contains('Search').click();
+    cy.get('[data-testid="search-input"]').type('{enter}');
 
     cy.get('[data-testid="search-results"] .search-result')
       .should('have.length', 5);
