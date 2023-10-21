@@ -4,10 +4,10 @@ interface RemoteCityWeather {
     temp: number;
     humidity: number;
   };
-  weather: [{
+  weather: {
     main: string;
     description: string;
-  }];
+  }[];
   wind: {
     deg: number;
     speed: number;
