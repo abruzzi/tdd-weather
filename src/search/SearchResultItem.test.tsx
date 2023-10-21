@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { SearchResultItem } from "./SearchResultItem";
-import { SearchResultItemType } from "./models/SearchResultItemType";
+import { SearchResultItemType } from "../models/SearchResultItemType";
 
 describe("search result item", () => {
   it("shows a city name, the state, and the country", () => {

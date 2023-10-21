@@ -1,6 +1,6 @@
 import { useFetchCityWeather } from "./useFetchCityWeather";
 import { act, renderHook, waitFor } from "@testing-library/react";
-import { SearchResultItemType } from "./models/SearchResultItemType";
+import { SearchResultItemType } from "../models/SearchResultItemType";
 
 import fetchMock from "jest-fetch-mock";
 

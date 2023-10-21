@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import { SearchResultItemType } from "./models/SearchResultItemType";
-import { SearchCityInput } from "./SearchCityInput";
-import { useFetchCityWeather } from "./useFetchCityWeather";
-import { Weather } from "./Weather";
+import { SearchCityInput } from "./search/SearchCityInput";
+import { useFetchCityWeather } from "./weather/useFetchCityWeather";
+import { Weather } from "./weather/Weather";
 
 function App() {
   const { cities, fetchCityWeather } = useFetchCityWeather();

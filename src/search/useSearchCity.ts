@@ -1,5 +1,5 @@
-import { RemoteSearchResultItem } from "./models/RemoteSearchResultItem";
-import { SearchResultItemType } from "./models/SearchResultItemType";
+import { RemoteSearchResultItem } from "../models/RemoteSearchResultItem";
+import { SearchResultItemType } from "../models/SearchResultItemType";
 import { useState } from "react";
 
 const useSearchCity = () => {

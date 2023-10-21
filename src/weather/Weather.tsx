@@ -1,4 +1,4 @@
-import { CityWeather } from "./models/CityWeather";
+import { CityWeather } from "../models/CityWeather";
 import React from "react";
 
 import './weather.css';

@@ -1,4 +1,4 @@
-import { SearchResultItemType } from "./models/SearchResultItemType";
+import { SearchResultItemType } from "../models/SearchResultItemType";
 import { useSearchCity } from "./useSearchCity";
 import React, { ChangeEvent, KeyboardEvent } from "react";
 import { SearchResultItem } from "./SearchResultItem";

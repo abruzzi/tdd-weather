@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CityWeather } from "./models/CityWeather";
-import { SearchResultItemType } from "./models/SearchResultItemType";
-import { RemoteCityWeather } from "./models/RemoteCityWeather";
+import { CityWeather } from "../models/CityWeather";
+import { SearchResultItemType } from "../models/SearchResultItemType";
+import { RemoteCityWeather } from "../models/RemoteCityWeather";
 
 const useFetchCityWeather = () => {
   const [cities, setCities] = useState<CityWeather[]>([]);
