@@ -23,7 +23,7 @@ export class CityWeather {
     if (this._temp == null) {
       return "-/-";
     }
-    return `${Math.ceil(this._temp)}°`;
+    return `${Math.ceil(this._temp)}°C`;
   }
 
   get main() {

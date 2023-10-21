@@ -15,7 +15,7 @@ function App() {
 
       <SearchCityInput onItemClick={onItemClick} />
 
-      <div data-testid="favorite-cities">
+      <div data-testid="favorite-cities" className="favorite-cities">
         <Weather cityWeather={cityWeather} />
       </div>
     </div>

@@ -90,3 +90,7 @@ ul li:hover {
 .search-result .country {
   margin-left: auto;
 }
+
+.favorite-cities {
+  margin-block: 1rem;
+}
