@@ -19,8 +19,8 @@ describe("SearchResultItemType", () => {
 
     const model = new SearchResultItemType(remote);
 
-    expect(model.city).toEqual('Melbourne');
-    expect(model.state).toEqual('Florida');
-    expect(model.country).toEqual('United States');
+    expect(model.city).toEqual("Melbourne");
+    expect(model.state).toEqual("Florida");
+    expect(model.country).toEqual("United States");
   });
 });
