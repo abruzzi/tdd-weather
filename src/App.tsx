@@ -1,5 +1,8 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import "./App.css";
+import { SearchResultItem } from "./SearchResultItem";
+import { SearchResultItemType } from "./models/SearchResultItemType";
+import { RemoteSearchResultItem } from "./models/RemoteSearchResultItem";
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -22,9 +25,9 @@ function App() {
       .then((r) => r.json())
       .then((cities) => {
         setSearchResults(
-          cities.map((city: any) => ({
-            name: city.name,
-          }))
+          cities.map(
+            (item: RemoteSearchResultItem) => new SearchResultItemType(item)
+          )
         );
       });
   };
@@ -46,10 +49,8 @@ function App() {
       <div className="search-results-popup">
         {searchResults.length > 0 && (
           <ul data-testid="search-results" className="search-results">
-            {searchResults.map((city, index) => (
-              <li key={index} className="search-result">
-                {city.name}
-              </li>
+            {searchResults.map((item, index) => (
+              <SearchResultItem key={index} item={item} />
             ))}
           </ul>
         )}

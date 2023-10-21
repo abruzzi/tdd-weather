@@ -60,6 +60,7 @@ h1 {
 }
 
 ul li {
+  font-size: 1rem;
   list-style: none;
   padding: 0.4rem;
   color: #333333;
@@ -69,4 +70,23 @@ ul li:hover {
   cursor: pointer;
   background: #e23e57;
   color: white;
+}
+
+.search-result {
+  display: flex;
+  gap: 0.2rem;
+  align-items: baseline;
+}
+
+.search-result .state, .country {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.search-result:hover .state, .country {
+  color: #eee;
+}
+
+.search-result .country {
+  margin-left: auto;
 }
