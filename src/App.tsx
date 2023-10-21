@@ -6,7 +6,7 @@ import { useFetchCityWeather } from "./useFetchCityWeather";
 import { Weather } from "./Weather";
 
 function App() {
-  const { cityWeather, fetchCityWeather } = useFetchCityWeather();
+  const { cities, fetchCityWeather } = useFetchCityWeather();
   const onItemClick = (item: SearchResultItemType) => fetchCityWeather(item);
 
   return (
@@ -16,7 +16,9 @@ function App() {
       <SearchCityInput onItemClick={onItemClick} />
 
       <div data-testid="favorite-cities" className="favorite-cities">
-        <Weather cityWeather={cityWeather} />
+        {cities.map((city) => (
+          <Weather key={city.name} cityWeather={city} />
+        ))}
       </div>
     </div>
   );

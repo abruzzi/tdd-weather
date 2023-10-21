@@ -92,5 +92,11 @@ ul li:hover {
 }
 
 .favorite-cities {
-  margin-block: 1rem;
+  margin-block: 2rem;
+}
+
+.favorite-cities {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
