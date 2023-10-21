@@ -15,6 +15,7 @@ describe("search result item", () => {
             state: "Victoria",
           })
         }
+        onItemClick={() => {}}
       />
     );
     expect(screen.getByText("Melbourne")).toBeInTheDocument();
